@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Food Delivery</title>
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <link rel="stylesheet" href="/public/styles.css">
+</head>
+
+<body>
+   <br>
+   <br>
+   <br>
+   <div class="container">
+      <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+         <div class="topnav">
+            <a class="active" href="/home">Home</a>
+            <a class="activemenu" href="/menu" id="Menu">Menu</a>
+            <a href="/ProceedToOrder"><img style="margin-left: auto;margin-right: auto;height: 20px;"
+                  src="/public/images/shoppingcart.png"><span class="badge">{{badgecount}}</span></a>
+            {{#if isAuthenticated}}
+            <label class="username">{{userName}}</label>
+            <a href="/previousorder" id="previousorder">Previous order</a>
+            <a href="/logout" id="logout">Logout</a>
+            {{else}}
+            <a href="/login" id="Login">Login</a>
+            <a href="/signin" id="SignIn">SignUp</a>
+            {{/if}}
+            {{!--/dashboard?id=Login /dashboard?id=SignIn /dashboard?id=Menu<a href="#orderview" ng-click="orderviewdiv()"><img style="margin-left: auto;margin-right: auto;height: 20px;" src="/public/images/shoppingcart.png"><span class="badge">{{badgecount}}</span></a> --}}
+         </div>
+      </nav>
+      
+      <div class="jumbotron text-center">
+         <div id="top" class="starter_container bg">
+            <div class="follow_container">
+               <div class="col-md-6 col-md-offset-3">
+                  <h2 class="top-title">The GOLDFINCH</h2>
+                  <h2 class="white second-title">" Best in the city "</h2>
+                  <hr>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div>
+         {{{body}}}
+      </div>
+      {{#if menubestsellerexits}}
+      <div class="container-fluid" style="margin-top: 50px;">
+         <h2 style="text-align: center;">Our Top 3 Best Sellers</h2>
+         <div style="text-align: center; margin-bottom: 40px;">
+            <span class="spoonspan"></span>
+            <img style="margin-left: auto;margin-right: auto;height: 18px;" src="/public/images/spoon.png">
+            <span class="spoonspan"></span>
+         </div>
+         <ul class="list-group list-group-horizontal">
+            {{#each bestseller}}
+            <li class="list-group-item">
+               <div class="card " style="width: 300px;">
+
+                  <form id="list-form" action="/AddToList" method="POST">
+
+                     <div class="card-body">
+                        <input type="text" class="col-xs-4 form-control" readonly
+                           style="font-size: x-large;float: left;border: transparent; background: transparent;color: black;"
+                           name="nameOfDish" id="nameOfDish" value="{{this.nameOfDish}}">
+                        <input type="text" class="col-xs-3 form-control" readonly
+                           style="font-size: x-large;float: right;border: transparent; background: transparent;color: black;"
+                           name="price" id="price" value="${{this.price}}">
+                        <button type="submit" class="col-xs-2 btn btn-primary">Add</button>
+                        <img class="card-img-bottom" src="/public/images/maincourse.jpg" alt="Card image"
+                           style="width:100%">
+                     </div>
+
+                  </form>
+
+               </div>
+            </li>
+            {{/each}}
+         </ul>
+      </div>
+      {{/if}}
+      {{#if Reviews}}
+      <h1>Reviews</h1>
+      {{/if}}
+      {{#if commentflag}}
+      <div>
+         <form method="POST" action="/comments">
+            <div class="container">
+
+               <label for="Comment"><b>Comment</b></label>
+               <input type="text" placeholder="Comment" name="Comment" required>
+
+               <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+      </div>
+      </form>
+   </div>
+   {{/if}}
+   {{#each Reviews}}
+   <div class="container">
+      <div class="card">
+         <div class="card-body">
+            <h5 class="card-title" style="font-weight: bold;">{{emailId}}</h5>
+
+            <p class="card-text">{{commnets}}</p>
+
+         </div>
+      </div>
+   </div>
+   {{/each}}
+
+   </div>
+
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+   </script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</script>

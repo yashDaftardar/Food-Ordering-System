@@ -1,0 +1,57 @@
+   <h2 style="text-align: center;">Select Quantity</h2> 
+  <div style="text-align: center; margin-bottom: 40px;"> 
+        <span class="spoonspan"></span>
+        <img style="margin-left: auto;margin-right: auto;height: 18px;" src="/public/images/spoon.png">
+        <span class="spoonspan"></span>
+      </div>
+      <form action="/AddQty" method="POST" >
+     <div id="Qtydiv">
+      <div class="row">
+        <div class="col-sm-6 maincoursediv"  >
+              <img src="/public/images/maincourse.jpg"> 
+        </div>
+        
+        <div class="col-sm-6 " style="display: grid;">
+         <input type="text"  class="col-xs-4 form-control" readonly   style="font-size: x-large;float: left;border: transparent; background: transparent;color: black;" name="nameOfDish" id="nameOfDish" value="{{nameOfDish}}">
+                                        
+         <input type="text"  class="col-xs-3 form-control" readonly   style="font-size: x-large;float: right;border: transparent; background: transparent;color: black;" name="price" id="price"  value="Price : {{price}}">
+          <div style="margin-bottom: 15px;" id="mycontainer">
+         <label style="font-size:medium;"><b>Qauntity :</b></label>
+         <select id="QtyDropdownId" style="height:30px" ng-model="selectItem"  name="QtyDropdown" class="QtyDropdown">
+         <option value="1">1</option>
+         </select>
+          </div>
+          <div style="margin-bottom: 15px;">
+          <button type="submit" class="btn btn-primary" >Add To Cart</button>
+          {{!-- <button type="button" class="btn btn-danger" >Go To Menu</button> --}}
+          </div>
+        </div>
+    </div>
+       
+    
+    </div>
+      </form>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+
+<script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous">
+
+</script>
+   <script>
+  
+     var ddl = document.getElementById('mycontainer').getElementsByTagName("select")[0];
+     
+  for (var i = 1; i <= 100; i++) {
+    var theOption = new Option;
+    theOption.text = i;
+    theOption.value = i;
+    ddl.options[i] = theOption;
+}
+
+   </script>
+
+   {{!-- class="container-fluid reveal-modal"  --}}

@@ -1,0 +1,162 @@
+  
+  <h2 style="text-align: center;">{{viewTitle}}</h2> 
+      <div style="text-align: center; margin-bottom: 40px;"> 
+        <span class="spoonspan"></span>
+        <img style="margin-left: auto;margin-right: auto;height: 18px;" src="/public/images/spoon.png">
+        <span class="spoonspan"></span>
+      </div>
+
+    
+     
+        <div class="frame effect7">
+        <div class="row" >
+         
+        <div class="col-sm-3 " >
+             <label>Order</label>
+        </div>
+        <div class="col-sm-2 ">
+              <label>Quantity</label>
+        </div>
+        <div class="col-sm-2 ">
+              <label>Price</label>
+        </div>
+        <div class="col-sm-3 "  >
+              <label>Total</label>
+        </div>
+        <div class="col-sm-2 ">
+        </div>
+
+        </div>
+        </div>
+
+        <div  class="frame effect7"  >  
+           {{#each list}}  
+            <div class="row" >
+                <form id="list-form" action="/CancleOrder" method="POST" >    
+              <div class="col-sm-3 "  >
+                      <input type="text"  class="col-xs-4 form-control" readonly   style="font-size: x-large;float: left;border: transparent; background: transparent;color: black;" name="nameOfDish" id="nameOfDish" value="{{this.nameOfDish}}">
+                   {{!-- <label >{{this.nameOfDish}}</label> --}}
+              </div>
+              <div class="col-sm-2 " >
+                      <input type="text"  class="col-xs-4 form-control" readonly   style="font-size: x-large;float: left;border: transparent; background: transparent;color: black;" name="QtyDropdown" id="QtyDropdown" value="{{this.QtyDropdown}}">
+                    {{!-- <label >{{this.QtyDropdown}}</label> --}}
+              </div>
+              <div class="col-sm-2 " >
+                     <input type="text"  class="col-xs-4 form-control" readonly   style="font-size: x-large;float: left;border: transparent; background: transparent;color: black;" name="price" id="price" value="${{this.price}}">
+                    {{!-- <label >{{this.price}}</label> --}}
+              </div>
+              <div class="col-sm-3 " >
+                    <input type="text"  class="col-xs-4 form-control" readonly   style="font-size: x-large;float: left;border: transparent; background: transparent;color: black;" name="Total" id="Total" value="${{this.Total}}">
+                    {{!-- <label >${{this.Total}}</label> --}}
+              </div>
+              <div class="col-sm-2 " >
+                  <button type = "submit" name = "myimage" value = "myimage">
+                  <img style="height: 18px;" src="/public/images/close.png">
+                  </button>
+              </div> 
+                </form> 
+            </div>
+           {{/each}}  
+        </div>
+
+        <div class="frame effect7">
+          <div class="row" >
+           
+          <div class="col-sm-3 " >        
+          </div>
+          <div class="col-sm-3 ">               
+          </div>
+          <div class="col-sm-3 ">
+                <label>Amount</label>
+          </div>
+          <div class="col-sm-3 "  >
+                <label>${{amount}}</label>
+          </div>
+         
+          </div>
+          <div class="row" >
+             
+            <div class="col-sm-3 " >        
+            </div>
+            <div class="col-sm-3 ">               
+            </div>
+            <div class="col-sm-3 ">
+                  <label>Tax Charge</label>
+            </div>
+            <div class="col-sm-3 "  >
+                  <label>${{taxcharge}}</label>
+            </div>
+           
+            </div>
+            <div class="row" >
+               
+              <div class="col-sm-6 " >        
+              </div>
+              <div class="col-sm-6 ">               
+              <span class="spoonspanhr"></span>
+              </div>
+             
+            </div>
+            <div class="row" >
+           
+              <div class="col-sm-3 " >        
+              </div>
+              <div class="col-sm-3 ">               
+              </div>
+              <div class="col-sm-3 ">
+                    <label>Total Amount</label>
+              </div>
+              <div class="col-sm-3 "  >
+                    <label>${{totalamount}}</label>
+              </div>
+             
+              </div>
+              {{#if useCoupon}}
+                <div class="row" >
+           
+              <div class="col-sm-3 " >        
+              </div>
+              <div class="col-sm-3 ">               
+              </div>
+              <div class="col-sm-3 ">
+                    <label>Total Amount after using coupon</label>
+              </div>
+              <div class="col-sm-3 "  >
+                    <label>${{totalamount}}</label>
+              </div>
+             
+              </div>
+              {{/if}}
+            <div class="row" > 
+                <div class="col-sm-3 " >        
+                </div>
+                <div class="col-sm-3 ">               
+                </div>
+                <div class="col-sm-3 ">
+                   <a href="/menu"> <label class="button">Continue Shopping</label></a>
+                      {{!-- <button class="waves-effect waves-light btn" >Continue Shopping</button> --}}
+                </div>
+                <div class="col-sm-3 "  >
+                      <form id="list-form" action="/BookOrder" method="POST" > 
+                  <button class="button">Order</button>
+                  </form>
+                </div>
+            </div>
+        </div>
+{{#if useCoupon}}
+<h1 style="color: red;">{{errors}}</h1>
+
+{{#each Coupon}}
+<div class="card" style="width: 100%;margin-top: 50px;">
+      <form method="POST" action="/coupon">
+  <div class="card-body">
+    <h5 class="card-title">{{header}}</h5>
+    <p class="card-text">{{description}}</p>
+    <button type="submit" class="btn btn-primary" name="coupon" value="{{code}}">{{code}}</button>
+  </form>
+</div>
+{{/each}}
+{{/if}}
+
+      
+      

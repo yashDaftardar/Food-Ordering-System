@@ -1,0 +1,46 @@
+ <h2 style="text-align: center;">Our Menu</h2> 
+      <div style="text-align: center; margin-bottom: 40px;"> 
+        <span class="spoonspan"></span>
+        <img style="margin-left: auto;margin-right: auto;height: 18px;" src="/public/images/spoon.png">
+        <span class="spoonspan"></span>
+      </div>
+      <div class="container-fluid">    
+        <div class="row">
+         
+          <div class="col-sm-6 maincoursediv"   >
+            <form name="search-form"  id="search-form" action="/MainCourse" method="POST" >
+            <div  class="frame effect7" onClick="document.forms['search-form'].submit();"  style="display:flex; height: 160px; flex-direction: row; justify-content: center; align-items: center">
+                <img style="margin-right: 50px;    height: 120px; width: 120px;" src="/public/images/maincourse.jpg">
+                <p style="font-size: x-large;">Main Course</p>
+              </div>
+               </form>
+          </div>
+          
+          <div class="col-sm-6 " >
+            <form name="search-formSide"  id="search-form" action="/Sides" method="POST" >
+              <div  class="frame effect7" onClick="document.forms['search-formSide'].submit();" style="display:flex; height: 160px; flex-direction: row; justify-content: center; align-items: center">
+                  <img style="margin-right: 50px;    height: 120px; width: 120px;" src="/public/images/saladimg.jpg">
+                  <p style="font-size: x-large;">Side</p>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 ">
+               <form name="search-formStarters"  id="search-form" action="/Starters" method="POST" >
+                <div  class="frame effect7" onClick="document.forms['search-formStarters'].submit();" style="display:flex; height: 160px; flex-direction: row; justify-content: center; align-items: center">
+                  <img style="margin-right: 50px;    height: 120px; width: 120px;" src="/public/images/starter.jpg">
+                  <p style="font-size: x-large;">Starters</p>
+                </div>
+              </form>
+            </div>
+            <div class="col-sm-6 " >
+               <form name="search-formDesserts"  id="search-form" action="/Desserts" method="POST" >
+                <div  class="frame effect7" onClick="document.forms['search-formDesserts'].submit();" style="display:flex; height: 160px; flex-direction: row; justify-content: center; align-items: center">
+                    <img style="margin-right: 50px;    height: 120px; width: 120px;" src="/public/images/desserts.jpg">
+                    <p style="font-size: x-large;">Desserts</p>
+                  </div>
+                </form>
+            </div>
+        </div>
+      </div>

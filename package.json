@@ -1,0 +1,35 @@
+{
+    "name": "foodorderdelivery",
+    "version": "1.0.0",
+    "description": "For online food delivery",
+    "main": "index.js",
+    "scripts": {
+        "start": " node app.js",
+        "test": "index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "FoodOrderDelivery"
+    },
+    "keywords": [
+        "xyz"
+    ],
+    "author": "Group3",
+    "license": "ISC",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "bootstrap": "^4.4.1",
+        "connect-flash": "^0.1.1",
+        "cookie-parser": "^1.4.4",
+        "express": "^4.17.1",
+        "express-handlebars": "^3.1.0",
+        "express-session": "^1.17.0",
+        "express-validator": "^6.3.0",
+        "jquery": "^1.9.1",
+        "mongodb": "^3.3.5",
+        "node-localdb": "0.0.3",
+        "nodemailer": "^6.4.1",
+        "popper.js": "^1.16.0",
+        "uuid": "^3.3.3"
+    }
+}

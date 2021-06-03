@@ -1,0 +1,36 @@
+   <h2 style="text-align: center;">{{viewTitle}}</h2> 
+      <div style="text-align: center; margin-bottom: 40px;"> 
+        <span class="spoonspan"></span>
+        <img style="margin-left: auto;margin-right: auto;height: 18px;" src="/public/images/spoon.png">
+        <span class="spoonspan"></span>
+      </div>
+     
+     <div class="container-fluid" style="width: 100%;">  
+     
+         {{#each list}}       
+               <div class="row" style="width: 100%;">         
+                   <form id="list-form" action="/AddToList" method="POST" style="width: 100%;"> 
+                    <div class="col-sm-12 maincoursediv"  >
+                    
+                      <div  class="frame effect7"  style="display: flex;" >                                                
+                          <input type="text"  class="col-xs-4 form-control" readonly   style="font-size: x-large;float: left;border: transparent; background: transparent;color: black;width: 200px" name="nameOfDish" id="nameOfDish" value="{{this.nameOfDish}}">
+                          <input type="text"  class="col-xs-4 form-control" readonly   style="font-size: x-large;float: left;border: transparent; background: transparent;color: black;" name="description" id="description" value="{{this.description}}">
+                          <input type="text"  class="col-xs-3 form-control" readonly   style="font-size: x-large;float: right;border: transparent; background: transparent;color: black;width: 75px" name="price" id="price"  value="{{this.price}}">
+                        
+                          <button  type="submit" class="col-xs-2 btn btn-primary" >Add</button>                        
+                          
+                      </div>
+                       
+                    </div>
+                  </form>  
+              </div> 
+       
+      {{/each}}
+      {{!-- <div style="text-align: center;margin-bottom: 40px;  margin: 20px;}">
+        <form id="list-form" action="/ProceedToOrder" method="POST" > 
+         <button  type="submit" class="btn btn-primary" >Proceed To Order</button>  
+         </form>                      
+      </div> --}}
+      </div>
+           
+  

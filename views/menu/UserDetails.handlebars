@@ -1,0 +1,43 @@
+<h2 style="text-align: center;">Enter Your Details</h2>
+<div style="text-align: center; margin-bottom: 40px;">
+  <span class="spoonspan"></span>
+  <img style="margin-left: auto;margin-right: auto;height: 18px;" src="/public/images/spoon.png">
+  <span class="spoonspan"></span>
+</div>
+<form id="list-form" action="/UserDetails" method="POST">
+  <div class="container">
+
+    <label><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" value="{{name}}" required>
+
+    <label><b>Mobile Number</b></label>
+    <input type="text" pattern="[1-9]{1}[0-9]{9}" placeholder="Enter Mobile Number" name="mobileNumber"
+      value="{{mobileNumber}}" required>
+
+    <label><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="emailId" value="{{emailId}}" required>
+
+
+    <label><b>Address</b></label>
+    <input type="text" placeholder="Enter Address" name="address" value="{{address}}" required>
+    <hr>
+
+
+    <label><b>Card number </b></label>
+    <input type='number' pattern="[1-9]{1}[0-9]{16}" placeholder="card number" name="card number" required>
+    <hr>
+
+    <label><b>Expiration month</b></label>
+    <input type="number"  placeholder="Expiration month" name="Expiration month" required>
+    <hr>
+    <label><b>Expiration year</b></label>
+    <input type="number" placeholder="Expiration year" name="Expiration year" required>
+    <hr>
+    <label><b>CVV</b></label>
+    <input type="number" placeholder="Cvv" name="Cvv" required>
+    <hr>
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
+
+
+</form>
