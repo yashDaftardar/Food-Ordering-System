@@ -18,6 +18,7 @@ How to use our application
 *Type the following command - npm start
 *Go to the localhost 3000 - https://localhost:3000/
 *You will see the main page of our application.
+
 To login as a registered user use the following credentials.
 Email : kalli007kalli@gmail.com
 Password : kallikalli007@kalli007
